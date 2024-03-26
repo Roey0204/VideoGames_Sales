@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-path = "C:/Data-Analysis/Dataset/vgchartz-2024.csv"
+path = "C:/Data-Analysis/Video_Game_Sales/Dataset/vgchartz-2024.csv"
 df = pd.read_csv(path)
 
 top_selling_games = df.groupby('title')['total_sales'].sum().sort_values(ascending=False).head(10)

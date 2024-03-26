@@ -1,0 +1,40 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+path = "C:/Data-Analysis/Video_Game_Sales/Dataset/vgchartz-2024.csv"
+df = pd.read_csv(path)
+genre_stats = df.groupby('genre').agg({
+    'critic_score': 'median',
+    'total_sales': 'sum'
+})
+sorted_genres_by_score = genre_stats.sort_values(by='critic_score', ascending=False)
+sorted_genres_by_sales = genre_stats.sort_values(by='total_sales', ascending=False)
+
+# Define a color palette
+palette = plt.cm.tab20(np.arange(len(sorted_genres_by_score)))
+
+plt.figure(figsize=(10, 6))
+plt.bar(sorted_genres_by_score.index, sorted_genres_by_score['critic_score'], color=palette)
+for i, score in enumerate(sorted_genres_by_score['critic_score']):
+    plt.text(i, score, f'{score}', ha='center', va='bottom', fontsize=10)
+    
+plt.title('Genres with Highest Critic Scores')
+plt.xlabel('Genre')
+plt.ylabel('Median Critic Score')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+plt.figure(figsize=(12, 6))
+plt.bar(sorted_genres_by_sales.index, sorted_genres_by_sales['total_sales'], color=palette)
+for i, sales in enumerate(sorted_genres_by_sales['total_sales']):
+    plt.text(i, sales, f'{sales:.0f}M', ha='center', va='bottom', fontsize=10)
+    
+plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{x:.0f}M'))
+plt.title('Genres with Highest Total Sales')
+plt.xlabel('Genre')
+plt.ylabel('Total Sales')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()

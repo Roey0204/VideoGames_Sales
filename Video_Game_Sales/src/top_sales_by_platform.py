@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 # Read the dataset
-path = "C:/Data-Analysis/Dataset/vgchartz-2024.csv"
+path = "C:/Data-Analysis/Video_Game_Sales/Dataset/vgchartz-2024.csv"
 df = pd.read_csv(path)
 
 # Group the data by game title and console, then sum up the total sales and get the top 10 selling games
