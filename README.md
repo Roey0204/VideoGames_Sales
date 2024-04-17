@@ -24,4 +24,8 @@ With pandas, we're able to efficiently explore and manipulate the data, getting 
 ### Sales trend
 <img src="https://github.com/Roey0204/VideoGames_Sales/blob/main/Video_Game_Sales/Result/sales%20trend.png">
 
+#### Comments: 
+Based on our analysis of sales trends, it is evident that demand for older games has consistently risen from 1970 to 2010, albeit encountering some challenges thereafter, yet maintaining a prominent presence in overall sales figures. Conversely, newer games typically experience significant initial impact upon release but exhibit a gradual decline in sales over subsequent years. From my vantage point, it appears that the gaming industry has been undergoing a downward trajectory post-2010.
+
+In light of these observations, I propose a strategic approach that involves the continued development of older games with the integration of new features. This strategy aims to leverage the enduring popularity of classic titles while infusing them with innovative elements to reinvigorate interest in the market.
 
